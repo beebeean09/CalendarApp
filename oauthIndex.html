@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Please Sign In</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript">
+      // window.opener.postMessage(location.href, "*");
+      $(document).ready(function() {
+      	//jquery
+          $(location).attr('href');
+
+      	//pure javascript
+      	let locationPath = window.location.href;
+
+      	// to show it in an alert window
+        let urlWithCode = locationPath;
+        console.log(urlWithCode);
+        let code = urlWithCode.split('code=')[1];
+        code = code.replace('#', '');
+        console.log(code);
+        $('a').attr('href',"http://localhost:3007/tokens?code=" + code);
+      });
+    </script>
+  </head>
+  <body>
+    <a href="">Click Here To Go See Your Calendar!</a>
+  </body>
+</html>

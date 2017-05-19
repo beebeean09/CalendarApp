@@ -13,30 +13,37 @@
   <script>
   let app = angular.module('app', []);
 
-  app.controller('ctrl', function($scope, $http, $window) {
+  app.controller('ctrl', function($scope, $http, $window, $location) {
     let newWindow;
     let url;
 
-    $http.get('url').then(function(res) {
-      url = res.data;
+    $http.get('api/url').then(function(res) {
+      console.log(res);
+      url = res.data.URL;
     });
 
     $scope.login = function() {
       console.log(url);
       newWindow = $window.open(url, 'Please Log In With Google', 'width=700px, height=700px');
+      // let landingUrl = "http://" + $window.location.host + "/url";
+      // $window.location.href = landingUrl;
     };
 
     $window.onmessage = function(e) {
-      newWindow.close();
+      // newWindow.close();
       let urlWithCode = e.data;
       let code = urlWithCode.split('code=')[1];
       code = code.replace('#', '');
 
       $http.get('tokens?code=' + code).then(function(res) {
         console.log('from window');
-        // console.log(res.data);
+        console.log(res.data);
+      })
+      .then(function(res) {
+        $window.location.href= '/tokens';
       })
     };
+
 
   });
 
