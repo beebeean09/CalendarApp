@@ -1,0 +1,13 @@
+.main-container {
+  background: grey;
+  font-family: arial;
+}
+
+.body-container {
+  background: grey;
+  font-family: arial;
+}
+
+.greeting-container {
+  border: 2px solid pink;
+}

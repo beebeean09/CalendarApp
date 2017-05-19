@@ -4,7 +4,6 @@ let YOUR_CLIENT_ID = '260061288921-m0175r5mgu0j7h7scnbi8nhu6brbel7b.apps.googleu
 let YOUR_CLIENT_SECRET = '2INqS1SZ1l_hId5TKXXRiQMb';
 let YOUR_REDIRECT_URL = 'http://localhost:3007/api/oauthcallback';
 
-
 const OAUTH2CLIENT = new OAuth2(
   YOUR_CLIENT_ID,
   YOUR_CLIENT_SECRET,
