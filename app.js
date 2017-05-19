@@ -41,8 +41,7 @@ app.get('/tokens', function (req, res) {
     let calendar = google.calendar('v3');
     let listEvents = {};
 
-    console.log('REDIRECT REDIRECT');
-    console.log(calendar.events.list({
+    calendar.events.list({
       auth: OAUTH2CLIENT,
       calendarId: 'primary'
     }, function(err1, response) {
@@ -51,7 +50,6 @@ app.get('/tokens', function (req, res) {
         let event = events[i];
         let startDate = event.start.dateTime || event.start.date;
         let endDate = event.end.dateTime || event.end.date;
-        console.log(event);
         listEvents[`event${i}`] = {
           title: event.summary ? event.summary : "",
           description: event.description ? event.description : "",
@@ -61,6 +59,6 @@ app.get('/tokens', function (req, res) {
         };
       }
       res.send(listEvents);
-    }));
+    });
   });
 });
