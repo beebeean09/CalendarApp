@@ -10,6 +10,5 @@
 - Google Calendar API
 - Oauth
 - Figuring out a way to get the events data after getting the access token from authentication ('/tokens')
-- At first, I was using Angular to fetch the code return after authentication, but the data I needed was return to the window, so I had to find another way to do it. I ultimately used jQuery to grab the info from the window and used it to redirect to the link for retrieving the access code (/oauthIndex.html)
+- At first, I was using Angular to fetch the code return after authentication, but the data I needed was return to the window, so I had to find another way to do it. I ultimately used jQuery to grab the info from the window and used it to redirect to the link for retrieving the access code (/views/oauthIndex.html)
 - Overall, I learned a lot after this coding challenge! A lot of it was new and was on my list to tackle next. Unfortunately, I didn't get to work on saving it onto the actual database so that the info would persist.
--
